@@ -2,6 +2,8 @@
 
 独立的 Kotlin / Android WebView 容器。最低 Android 8.0（API 26），编译及目标 API 35。
 
+完整原生功能还要求设备的 WebView 提供 `WEB_MESSAGE_LISTENER`。Android 系统版本达标不代表浏览器内核达标；使用旧版 Android 的设备应更新 Android System WebView／Chrome。
+
 此仓库包含 Android 源码、配置示例、JVM 测试和模拟器测试。业务网页、PHP API 和论坛桥接插件由站点维护者另行部署，不包含在本仓库中。APK 运行时加载配置站点的 `/app/` 页面。
 
 ## 构建调试版
@@ -69,3 +71,9 @@ GitHub Actions 使用标准 Ubuntu 运行器：
 ```
 
 模拟器结果不能替代厂商真机、实际相册／相机、支付应用和真实论坛业务联调。Actions 的测试报告短期保留；不会自动上传生产配置或发布正式 APK。
+
+### 首轮 CI 结果（2026-10-08）
+
+[首次运行](https://github.com/drch90/discuz-app-android/actions/runs/37731292827)验证提交 `eebf924`：编译、lint、31 项 JVM 测试通过；Android 12、13、15、16 各 3 项设备测试通过，无跳过。
+
+Android 8（API 26）镜像内置 `com.android.chrome 69.0.3497.100`，不支持安全消息桥，测试页面出现 `DiscuzNative is not defined`，3 项设备测试均失败。因此本轮工作流整体为失败，不能称为全部版本兼容通过。已保留 API 26 测试及失败结果；后续需要为该镜像配置支持消息桥的 WebView 再验证。目前没有验证 Android 8 搭配更新内核后的结果，也没有为旧内核添加权限较宽的桥接回退。
