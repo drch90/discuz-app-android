@@ -1,0 +1,6 @@
+# UTF-8. Keep the real file and keystore outside the public repository.
+# Absolute paths are recommended. Never commit real passwords or keys.
+storeFile=/private/release.p12
+storePassword=REPLACE_LOCALLY
+keyAlias=release
+keyPassword=REPLACE_LOCALLY

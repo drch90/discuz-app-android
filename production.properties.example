@@ -1,0 +1,19 @@
+# UTF-8. Copy to production.properties and fill in the real HTTPS forum root.
+# Primary HTTPS forum root; may be empty when siteUrls contains the roots.
+# Include the real forum subdirectory; do not add an API path.
+siteUrl=
+# SAME forum only; primary + backups <= 8 distinct URLs, all HTTPS.
+# Put all backups on ONE line with ASCII commas. No quotes, [] or Chinese commas.
+# Do not repeat the siteUrls key: Java properties keeps only the last value.
+# Single-domain example: siteUrl=https://forum.example.com/ and leave siteUrls empty.
+# Multiple domains: replace the empty values, do not add duplicate keys:
+# siteUrl=https://forum.example.com/
+# siteUrls=https://backup1.example.net/,https://backup2.example.org/discuz/
+siteUrls=
+# APK installation name. Configure the separately deployed website independently.
+appName=社区
+applicationId=com.discuz.community
+# Must exceed the versionCode of any installed release with this package ID.
+versionCode=17
+versionName=1.12.0-rc.8
+# Keep signing material in a separate, private signing.properties file.

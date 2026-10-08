@@ -1,0 +1,23 @@
+# Copy to site.properties (UTF-8). Gradle -P arguments take precedence.
+# Forum root URL, including the deployment subdirectory when there is one.
+# /app/, /app/index.html and a trailing slash are also accepted.
+# Empty debug URL opens the first-run address screen. Release requires HTTPS.
+siteUrl=
+# Optional additional roots for the SAME forum; primary + backups <= 8 distinct URLs.
+# All endpoints must have HTTPS in release builds. siteUrl may be empty if siteUrls is set.
+# ONE line, ASCII commas; no quotes, [] or Chinese commas; do not repeat the key.
+# Replace the empty values below, rather than adding duplicate keys:
+# siteUrl=https://forum.example.com/
+# siteUrls=https://backup1.example.net/,https://backup2.example.org/discuz/
+siteUrls=
+# Single-domain builds leave siteUrls empty. Debug example: siteUrl=http://192.168.1.100/discuz/
+# APK installation name. Configure the separately deployed website independently.
+appName=社区
+applicationId=com.discuz.community
+versionCode=17
+versionName=1.12.0-rc.8
+# Optional release signing; paths are relative to this Android project.
+# storeFile=release.jks
+# storePassword=
+# keyAlias=release
+# keyPassword=
